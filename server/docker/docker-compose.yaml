@@ -14,7 +14,8 @@ services:
     ports:
       - 3306:3306
     volumes:
-      - db-store:/var/lib/mysql
+      - db-store-helpdesk:/var/lib/mysql
       - ./my.cnf:/etc/mysql/conf.d/my.cnf
+      - ../src/main/resources/db/init:/docker-entrypoint-initdb.d
 volumes:
-  db-store:
+  db-store-helpdesk:
